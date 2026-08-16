@@ -1,0 +1,19 @@
+{
+  "name": "@improbabilitea/names-go-release",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Release tooling only. This is a Go module; nothing here is published to npm or reaches go.mod.",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "scripts": {
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run --no-ci"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/release-notes-generator": "14.1.1",
+    "semantic-release": "25.0.9"
+  }
+}

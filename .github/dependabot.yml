@@ -1,0 +1,24 @@
+version: 2
+updates:
+  # Kept even though RNF-09 forbids external dependencies: if one is ever added
+  # deliberately, it should be tracked from day one rather than after the fact.
+  - package-ecosystem: gomod
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      go-dependencies:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+  # Release tooling only. It never reaches go.mod; the deps job still enforces
+  # that the Go module has no dependencies at all.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      release-tooling:
+        patterns: ["*"]

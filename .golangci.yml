@@ -1,0 +1,29 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+# Release-grade gate for a public library. revive/stylecheck are intentionally
+# omitted: style bikeshedding is not a gate. depguard is not needed either —
+# RNF-09 forbids external dependencies outright, and `make deps` enforces it.
+linters:
+  default: none
+  enable:
+    - errcheck    # unchecked errors
+    - govet       # suspicious constructs
+    - ineffassign # unused assignments
+    - staticcheck # correctness + simplifications (incl. gosimple, stylecheck)
+    - unused      # unused code
+    - gosec       # security issues
+  exclusions:
+    rules:
+      # gosec flags math/rand as weak randomness (G404). That is the documented
+      # design here, not an oversight: seeded generation *requires* a reproducible
+      # PRNG, and consumers who need unpredictability opt into CryptoEntropy.
+      - path: (^|/)internal/random/
+        linters:
+          - gosec
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

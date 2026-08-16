@@ -1,0 +1,30 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "dictionaries": {
+    "adjective": "adjectives.txt",
+    "animal": "animals.txt",
+    "color": "colors.txt",
+    "mood": "moods.txt",
+    "nature": "nature.txt",
+    "object": "objects.txt",
+    "space": "space.txt"
+  },
+  "templates": [
+    { "pattern": ["adjective", "animal"], "weight": 6 },
+    { "pattern": ["adjective", "nature"], "weight": 4 },
+    { "pattern": ["adjective", "object"], "weight": 3 },
+    { "pattern": ["adjective", "space"], "weight": 3 },
+    { "pattern": ["color", "animal"], "weight": 3 },
+    { "pattern": ["mood", "animal"], "weight": 2 },
+    { "pattern": ["space", "animal"], "weight": 2 },
+    { "pattern": ["color", "nature"], "weight": 2 },
+    { "pattern": ["mood", "nature"], "weight": 1 },
+
+    { "pattern": ["color", "adjective", "animal"], "weight": 1 },
+    { "pattern": ["adjective", "nature", "animal"], "weight": 1 },
+    { "pattern": ["adjective", "object", "animal"], "weight": 1 },
+    { "pattern": ["adjective", "space", "animal"], "weight": 1 },
+    { "pattern": ["mood", "adjective", "animal"], "weight": 1 }
+  ]
+}

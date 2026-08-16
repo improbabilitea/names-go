@@ -1,0 +1,17 @@
+{
+  "name": "cinema",
+  "version": "1.0.0",
+  "dictionaries": {
+    "cinema_noun": "cinema_nouns.txt"
+  },
+  "templates": [
+    { "pattern": ["adjective", "cinema_noun"], "weight": 6 },
+    { "pattern": ["cinema_noun", "animal"], "weight": 3 },
+    { "pattern": ["color", "cinema_noun"], "weight": 2 },
+    { "pattern": ["mood", "cinema_noun"], "weight": 1 },
+
+    { "pattern": ["color", "adjective", "cinema_noun"], "weight": 1 },
+    { "pattern": ["adjective", "nature", "cinema_noun"], "weight": 1 },
+    { "pattern": ["adjective", "cinema_noun", "animal"], "weight": 1 }
+  ]
+}
