@@ -12,7 +12,7 @@ given `algorithmVersion` and `packFingerprint` — see "Determinism" in the READ
 Any release that changes a built-in pack changes its fingerprint, and is noted
 here under **Changed** with the new fingerprint.
 
-## [1.0.1] — 2026-08-16
+## [1.0.2] — 2026-08-16
 
 ### Added
 
@@ -54,9 +54,6 @@ here under **Changed** with the new fingerprint.
 
 ### Notes
 
-- First published version. v1.0.0 was tagged prematurely by the release pipeline
-  and cached by the module mirror before it could be withdrawn; it is retracted
-  in `go.mod` and skipped by the go command and pkg.go.dev.
 - Requires Go 1.26.
 - No dependencies outside the standard library, enforced in CI.
 - The shipped vocabulary has not had a full human review — see "About the
